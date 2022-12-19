@@ -1,0 +1,50 @@
+<p-toast></p-toast>
+
+<div class="row p-0 m-0">
+    <div class="col-sm-6 h-100 d-none d-sm-block">
+        <div class="d-flex flex-column justify-content-center align-items-center h-100">
+            <img src="assets/images/undraw-secure-login-pdn-4-1.png">
+            <p class="text-black">تسجيل الدخول</p>
+            <p class="text-gray text-center">
+                قم بتسجيل الدخول الان ,
+                <br>
+                وقم بمعالجة الطلبات
+            </p>
+        </div>
+    </div>
+    <div class="col-sm-6 h-100">
+        <div class="d-flex flex-column justify-content-center align-items-center h-100">
+            <img src="assets/images/group-4.png">
+            <p class="text-black mt-5">تسجيل الدخول</p>
+            <p class="text-gray text-center">
+                أهلا بك مجدداً ، قم بالتسجيل الآن لمتابعة آخر
+                <br>
+                تفاصيل المستخدمين
+
+            </p>
+
+            <form [formGroup]="login_form" class="w-100 mt-md-5 mt-3" >
+                <div class="mb-3 mx-auto">
+                    <label class="form-label text-black"> البريد الالكتروني</label>
+                    <input type="email" formControlName="email" class="form-control text-start"  placeholder="ادخل البريد الالكتروني">
+                </div>
+                <div class="mb-3 mx-auto">
+                    <label class="form-label text-black"> كلمة المرور </label>
+                    <input type="text" formControlName="password" class="form-control text-start"   placeholder="ادخل  كلمة المرور">
+                </div>   
+                <div class="mb-3 mx-auto">
+                    <button class="btn form-control text-center text-white  bg-main" (click)="login()">تسجيل الدخول</button>
+                </div>
+             
+            </form>   
+            <div class="mb-3 mx-auto">
+                    <p class="text-main forget-password">نسيت كلمة المرور ؟ قم بتعيين كلمة مرور جديدة</p>
+            </div>                                 
+        </div>
+    </div>
+</div>
+
+
+
+
+

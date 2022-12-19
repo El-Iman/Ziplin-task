@@ -1,0 +1,46 @@
+
+@font-face {
+    font-family: fontFamily;
+    src: url(assets/din-next-lt-w23-medium.ttf);
+  }
+
+:root{
+    --main-color:#8061d8;
+    --black-color:#000000;
+    --gray-color:#a4a5a5;
+    --bg-login-right:#f4f7ff;
+    --placeholder-color:#bfbfbf;
+    --gray2-color:#f2f2f2
+}
+*{
+    box-sizing: border-box;
+    direction: rtl;
+    font-family: fontFamily;
+}
+body{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.text-gray{
+    color: var(--gray-color) ;
+}
+
+.text-main{
+    color: var(--main-color);
+}
+.bg-main{
+    background-color: var(--main-color)!important;
+}
+.bg-aqua{
+    background-color: var(--bg-login-right);
+}
+.form-control:focus{
+    outline: none;
+    box-shadow: none;
+}
+.px-40{
+    padding-left: 40px;
+    padding-right: 40px;
+}

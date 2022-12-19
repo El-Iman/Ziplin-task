@@ -1,0 +1,42 @@
+nav {
+    // background-image: linear-gradient(249deg, #f5f8ff 137%, #e7eeff -10%);
+    height: 82px;
+    padding: 17px;
+    background-color: #e7eeff;
+
+    p {
+        white-space: nowrap;
+
+        span {
+            &:nth-child(2) {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .notification-icon {
+        padding-right: 4rem;
+    }
+}
+
+@media (max-width:330px) {
+    nav {
+        p {
+            white-space: nowrap;
+
+            span {
+                &:first-child {
+                    font-size: 14px;
+                }
+
+                &:nth-child(2) {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .notification-icon {
+            padding-right: 2rem;
+        }
+    }
+}

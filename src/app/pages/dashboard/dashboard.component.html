@@ -1,0 +1,229 @@
+<div class="dashboard-header px-40 ">
+    <div class="d-sm-flex justify-content-between align-items-center">
+
+        <div class="d-flex px-6 justify-content-sm-start justify-content-between mb-5 mb-sm-0">
+            <img src="assets/images/group-4.png">
+            <p class="mb-0">
+                <span>لوحة التحكم</span>
+                <br>
+                <span>طلبات التمويل</span>
+            </p>
+        </div>
+
+        <div class="d-flex">
+            <input type="text" class="form-control " placeholder="ابحث عن ..">
+            <span class="search-icon bg-main">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor"
+                    class="bi bi-search text-white " viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg>
+            </span>
+        </div>
+
+    </div>
+</div>
+
+<div class="cards px-40">
+    <div class="row p-1">
+
+        <div class="col-xl-4 col-lg-6  mb-40 px-2 ">
+            <div class="item d-flex justify-content-between align-items-center ">
+                <div class="card-head">
+                    <h1>اجمالي الطلبات </h1>
+                    <p>
+                        <span>25,7590 </span>
+                        <span>طلب</span>
+                    </p>
+                </div>
+
+                <div class="card-img h-100">
+                    <div class="position-relative">
+                        <div class="position-absolute">
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                        <div class="position-absolute">
+                            <div>
+                            <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <div class="position-absolute">
+                            <i class="pi pi-check text-main"></i>
+                            <i class="pi pi-times text-white"></i>
+                            <i class="pi pi-plus text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xl-4 col-lg-6  mb-40 px-2 ">
+            <div class="item d-flex justify-content-between align-items-center">
+
+
+                        <div class="card-head">
+                            <h1>الطلبات المقبولة </h1>
+                            <p>
+                                <span>250 </span>
+                                <span>طلب مقبول </span>
+                            </p>
+                        </div>
+        
+                        <div class="card-img2 w-100 h-100">
+                            <div class="position-relative">
+                                <div class="position-absolute d-flex">
+                                    <span>
+                                        <span></span>
+                                        <span></span>
+                                    </span>
+                                    <span>
+                                        <i class="pi pi-check text-white"></i>
+                                    </span>
+                                </div>
+                                <div class="position-absolute"></div>
+                                <div class="position-absolute d-flex">
+                                    <span>
+                                        <span></span>
+                                        <span></span>
+                                    </span>
+                                    <span>
+                                        <i class="pi pi-check text-white"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                  
+
+            </div>
+        </div>
+  
+
+        <div class="col-xl-4 col-lg-6  mb-40 px-2 ">
+            <div class="item d-flex justify-content-between align-items-center">
+
+
+                        <div class="card-head">
+                            <h1>الطلبات المقبولة </h1>
+                            <p>
+                                <span>250 </span>
+                                <span>طلب مقبول </span>
+                            </p>
+                        </div>
+        
+                        <div class="card-img2 w-100 h-100">
+                            <div class="position-relative">
+                                <div class="position-absolute d-flex">
+                                    <span>
+                                        <span></span>
+                                        <span></span>
+                                    </span>
+                                    <span class="bg-orange">
+                                        <i class="pi pi-times  text-white"></i>
+                                    </span>
+                                </div>
+                                <div class="position-absolute"></div>
+                                <div class="position-absolute d-flex">
+                                    <span>
+                                        <span></span>
+                                        <span></span>
+                                    </span>
+                                    <span class="bg-orange">
+                                        <i class="pi pi-times  text-white"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                  
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class=" px-40 order-lists ">
+    <div class="card">
+        <h1 class="fw-bold">قائمة طلبات التمويل</h1>
+        <div class="tabs">
+            <ul class="nav nav-pills">
+                <li class="nav-item" *ngFor=" let nav of navs;index as i">
+                    <a class="nav-link " [ngClass]="{'active':i ==0}" data-bs-toggle="pill">
+                        {{i+1}}.{{nav.name}}
+                        <span class="counter">{{nav.count}}</span>
+                    </a>
+                </li>
+            </ul>
+
+
+            <div class="tab-content">
+                <div *ngFor=" let nav of navs;index as i" class="tab-pane w-100 container m-0"
+                    [ngClass]="{'active':i ==0}" [id]="nav.href">
+
+                    <div class="d-flex  justify-content-between flex-wrap ">
+                        <div class="input-group ">
+                            <label class="fw-bold text-main">تصفية</label>
+                            <input placeholder="ابحث برقم الطلب" (keyup)="filterData()" [(ngModel)]="fields.number" type="text"
+                                class="form-control">
+                            <select class="form-select form-control" (change)="filterData()" [(ngModel)]="fields.status">
+                                <option selected disabled value="null">حالة الطلب</option>
+                                <option value="1">مؤهل للشروط</option>
+                                <option value="0">غيرمؤهل للشروط</option>
+                            </select>
+                        </div>
+
+                        <div class="buttons-group d-flex">
+                            <button class="btn bg-main text-white">ارسل كل الطلبات للتأمينات</button>
+                            <button class="btn bg-aqua text-main">ارسل الرفض لكل المقترضين</button>
+                        </div>
+
+                    </div>
+
+
+
+
+
+                    <div class="table">
+
+                        <table class="w-100">
+                            <thead>
+                                <th>رقم الطلب</th>
+                                <th>مبلغ السداد</th>
+                                <th>مدة السداد</th>
+                                <th>الربح الكلي</th>
+                                <th>حالة الطلب</th>
+                                <th>الإجراء</th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let row of orders | search:filter">
+                                    <td class="fw-bold">{{row.number}} </td>
+                                    <td>{{row.price}} <span>ريال</span> </td>
+                                    <td>{{row.time}} <span>شهر</span></td>
+                                    <td>{{row.rebh}} <span>ريال</span></td>
+                                    <td><span
+                                            [ngClass]="{'success bg-aqua':row.status   == 1,'danger':row.status   == 0}">{{row.status
+                                            == 1?'مؤهل للشروط':'غير مؤهل للشروط'}}</span></td>
+                                    <td><img src="assets/images/action-copy-4.png"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="pagination">
+    <div class="m-auto">
+     <span>الصفحة</span>
+     <span>25</span>
+
+     <span>من أصل 30</span>
+     <span>
+         <i class="pi pi-chevron-right text-main"></i>
+         <i class="pi pi-chevron-left text-main"></i>
+     </span>
+    </div>
+ </div>
